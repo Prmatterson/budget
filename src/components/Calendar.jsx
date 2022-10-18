@@ -3,7 +3,6 @@ import React from 'react'
 export default function Calendar () {
   
   return (
-
     <div className="container">
       <div className="item">1</div>
       <div className="item">2</div>
