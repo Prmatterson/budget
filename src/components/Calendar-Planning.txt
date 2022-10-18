@@ -1,0 +1,15 @@
+Years
+
+
+Months
+
+
+Days
+- number of days relative to month id (e.g. month class/id="October" means 31 days)
+- program in February leap years
+
+Weekdays vs. Weekends
+- probably classes
+
+Holiday override
+- turns weekday into weekend (insofar as bill payments, etc. won't be processed)
