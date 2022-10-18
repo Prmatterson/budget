@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@react-three/fiber": "^8.8.10",
+    "nodemon": "^2.0.20",
     "three": "^0.145.0"
   }
 }
