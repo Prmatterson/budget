@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Calendar () {
+export default function Calendar() {
   
   return (
     <div className="container">
