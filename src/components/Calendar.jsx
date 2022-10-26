@@ -3,8 +3,16 @@ import "tailwindcss/tailwind.css"
 
 export default function Calendar() {
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const todaysDate = new Date();
+const thisYear = todaysDate.getFullYear();
+const month = months[todaysDate.getMonth()];
+const selectFirstDay = todaysDate.setDate(1);
+const firstDay = todaysDate.getDate();
+
+
   const day = [];
-  for (let x = 1; x < 31; x++) {
+  for (let x = 1; x < 31; x++) { // x < total days in current month
     day.push(x);
   };
 
@@ -12,7 +20,8 @@ export default function Calendar() {
     <div>
 
       <div className='grid grid-cols-7'>
-        <div class="cell col-span-7" id='month'>November</div>
+        <div class='cell col-span-7' id='year'> { thisYear } </div>
+        <div class="cell col-span-7" id='month'> {month} </div>
         <div id='date-header-sunday'>Sun</div>
         <div id='date-header-monday'>Mon</div>
         <div id='date-header-tuesday'>Tue</div>
