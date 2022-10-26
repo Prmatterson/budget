@@ -18,7 +18,7 @@ function daysInMonth(year, month) {
 
 // Function to lay out number of days in each month so they can be added to the calendar
 const day = [];
-for (let x = 1; x < {daysInMonth(thisYear, month)}; x++) {
+for (let x = 1; x < {daysInMonth(thisYear, thisMonth)}; x++) {
   day.push(x);
 }
 
