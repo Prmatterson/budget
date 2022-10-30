@@ -14,7 +14,7 @@ console.log(thisMonthName)
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
 const selectFirstDay = todaysDate.setDate(1);
-const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to [6] (the 7th column))
+const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
 console.log(firstDay);
 
 // Function to automatically determine number of days in current month
@@ -50,7 +50,7 @@ export default function Calendar() {
         {day.map((number) => { // if statements determine on what named weekday the month starts
           if (number === 1) {
             if (firstDay === 0) {
-              return <div className="cell col-start-1 relative flex flex-col bg-white group">{number}</div>;
+              return <div className="cell col-start-1 relative flex flex-col bg-white group">{number}</div>
             } else if (firstDay === 1) {
               return <div className="cell col-start-2 relative flex flex-col bg-white group">{number}</div>
             } else if (firstDay === 2) {
