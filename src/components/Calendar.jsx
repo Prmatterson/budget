@@ -37,17 +37,17 @@ export default function Calendar() {
   return (
     <div>
 
-      <div className='grid grid-cols-7 flex-grow w-full h-auto grid-rows-5 pt-px mt-1 border-spacing-2 shadow-xl'>
-        <div className='cell col-span-7' id='year'> {thisYear} </div>
-        <div className="cell col-span-7" id='month'> {thisMonthName} </div>
-        <div id="date-header-sunday">Sun</div>
-        <div id='date-header-monday'>Mon</div>
-        <div id='date-header-tuesday'>Tue</div>
-        <div id='date-header-wednesday'>Wed</div>
-        <div id='date-header-thursday'>Thu</div>
-        <div id='date-header-friday'>Fri</div>
-        <div id='date-header-saturday'>Sat</div>
-        {day.map((number) => {
+      <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle'>
+        <div className='cell col-span-7 bg-slate-300' id='year'> {thisYear} </div>
+        <div className="cell col-span-7 bg-slate-200" id='month'> {thisMonthName} </div>
+        <div id="date-header-sunday" className="bg-slate-100">Sun</div>
+        <div id='date-header-monday' className="bg-slate-100">Mon</div>
+        <div id='date-header-tuesday' className="bg-slate-100">Tue</div>
+        <div id='date-header-wednesday' className="bg-slate-100">Wed</div>
+        <div id='date-header-thursday' className="bg-slate-100">Thu</div>
+        <div id='date-header-friday' className="bg-slate-100">Fri</div>
+        <div id='date-header-saturday' className="bg-slate-100">Sat</div>
+        {day.map((number) => { // if statements determine on what named weekday the month starts
           if (number === 1) {
             if (firstDay === 0) {
               return <div className="cell col-start-1 relative flex flex-col bg-white group">{number}</div>;
@@ -65,7 +65,7 @@ export default function Calendar() {
               return <div className="cell col-start-7 ">{number}</div>
             }
           }
-          return <div className="cell relative flex flex-col bg-white group mb-10">{number}</div>;
+          return <div className="cell relative flex flex-col bg-white group mb-10">{number}</div>; // adds the rest of the days
         })}
       </div>
     </div>
