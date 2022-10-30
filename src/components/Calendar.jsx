@@ -37,7 +37,7 @@ export default function Calendar() {
   return (
     <div>
 
-      <div className='grid grid-cols-7 flex-grow w-full h-auto grid-rows-5 pt-px mt-1'>
+      <div className='grid grid-cols-7 flex-grow w-full h-auto grid-rows-5 pt-px mt-1 border-spacing-2 shadow-xl'>
         <div className='cell col-span-7' id='year'> {thisYear} </div>
         <div className="cell col-span-7" id='month'> {thisMonthName} </div>
         <div id="date-header-sunday">Sun</div>
@@ -50,7 +50,7 @@ export default function Calendar() {
         {day.map((number) => {
           if (number === 1) {
             if (firstDay === 0) {
-              return <div className="cell col-start-1 relative flex flex-col bg-white- group">{number}</div>;
+              return <div className="cell col-start-1 relative flex flex-col bg-white group">{number}</div>;
             } else if (firstDay === 1) {
               return <div className="cell col-start-2 relative flex flex-col bg-white group">{number}</div>
             } else if (firstDay === 2) {
@@ -65,7 +65,7 @@ export default function Calendar() {
               return <div className="cell col-start-7 ">{number}</div>
             }
           }
-          return <div className="cell relative flex flex-col bg-white group">{number}</div>;
+          return <div className="cell relative flex flex-col bg-white group mb-10">{number}</div>;
         })}
       </div>
     </div>
