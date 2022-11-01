@@ -46,25 +46,19 @@ export default function Calendar() {
         <div id='date-header-thursday' className="bg-slate-100">Thu</div>
         <div id='date-header-friday' className="bg-slate-100">Fri</div>
         <div id='date-header-saturday' className="bg-slate-100">Sat</div>
-        {day.map((number) => { // if statements determine on what named weekday the month starts
+        {day.map((number) => {
           if (number === 1) {
-            if (firstDay === 0) {
-              return <div className="cell col-start-1 relative flex flex-col bg-white group">{number}</div>
-            } else if (firstDay === 1) {
-              return <div className="cell col-start-2 relative flex flex-col bg-white group">{number}</div>
-            } else if (firstDay === 2) {
-              return <div className="cell col-start-3 relative flex flex-col bg-white group">{number}</div>
-            } else if (firstDay === 3) {
-              return <div className="cell col-start-4 relative flex flex-col bg-white group">{number}</div>
-            } else if (firstDay === 4) {
-              return <div className="cell col-start-5 relative flex flex-col bg-white group">{number}</div>
-            } else if (firstDay === 5) {
-              return <div className="cell col-start-6 relative flex flex-col bg-white group">{number}</div>
-            } else {
-              return <div className="cell col-start-7 ">{number}</div>
-            }
+            return (
+              <div className={`cell col-start-${firstDay + 1} relative flex flex-col bg-white group`}>
+                {number}
+              </div>
+            );
           }
-          return <div className="cell relative flex flex-col bg-white group mb-10">{number}</div>; // adds the rest of the days
+          return (
+            <div className="cell relative flex flex-col bg-white group mb-10">
+              {number}
+            </div>
+          );
         })}
       </div>
     </div>
