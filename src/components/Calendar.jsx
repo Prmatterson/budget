@@ -27,8 +27,8 @@ export default function Calendar() {
 
   return (
     <div>
-      <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle'>
-        <div className='cell col-span-7 bg-slate-300' id='year'> {thisYear} </div>
+      <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
+        <div className='cell col-span-7 bg-slate-300 rounded-t-xl' id='year'> {thisYear} </div>
         <div className="cell col-span-7 bg-slate-200" id='month'> {thisMonthName} </div>
         <div id="date-header-sunday" className="bg-slate-100">Sun</div>
         <div id='date-header-monday' className="bg-slate-100">Mon</div>
