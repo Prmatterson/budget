@@ -115,7 +115,6 @@ export default function Form() {
         <br />
         <br />
 
-        
         <button className="mt-1 w-1/4 px-3 py-2 bg-white border border-4 border-slate-300 rounded-xl text-sm font-bold shadow-xl text-center hover:bg-slate-300">Submit</button>
 
       </form>
