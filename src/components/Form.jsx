@@ -25,7 +25,6 @@ export default function Form() {
     { label: "Quarterly", value: "Quarterly" },
     { label: "Biannually", value: "Biannually" },
     { label: "Yearly", value: "Yearly" }, 
-    { label: "Custom", value: "Custom" },
   ]
 
   // Using state to keep track of what the selected variable is
