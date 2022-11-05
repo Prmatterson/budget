@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export default function Form() {
 
-  // Array of objects containing data for form fields
+  // Arrays of objects containing data for form fields
   let accounts = [
     { label: "Bank of Montreal Chequing", value: "Bank of Montreal Chequing" },
     { label: "Scotiabank Savings", value: "Scotiabank Savings" },
