@@ -2,14 +2,14 @@ import React from 'react'
 
 // Creating references to the year and month
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let todaysDate = new Date();
-let thisYear = todaysDate.getFullYear();
-let thisMonthNumber = todaysDate.getMonth() + 1;
-let thisMonthName = months[todaysDate.getMonth()]
+const todaysDate = new Date();
+const thisYear = todaysDate.getFullYear();
+const thisMonthNumber = todaysDate.getMonth() + 1;
+const thisMonthName = months[todaysDate.getMonth()]
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
-let selectFirstDay = todaysDate.setDate(1);
-let firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
+const selectFirstDay = todaysDate.setDate(1);
+const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
 
 // Function to automatically determine number of days in current month
 function daysInMonth(year, month) {
@@ -17,7 +17,7 @@ function daysInMonth(year, month) {
 }
 
 // Creating array of days in the month
-let day = [];
+const day = [];
 for (let x = 1; x < daysInMonth(thisYear, thisMonthNumber) + 1; x++) {
   day.push(x);
 }
@@ -40,13 +40,13 @@ export default function Calendar() {
         {day.map((number) => {
           if (number === 1) {
             return (
-              <div className={`cell col-start-${firstDay + 1} relative flex flex-col bg-white group`}>
+              <div className={`cell col-start-${firstDay + 1} relative flex flex-col bg-white group hover:bg-slate-100`}>
                 {number}
               </div>
             );
           }
           return (
-            <div className="cell relative flex flex-col bg-white group mb-10">
+            <div className="cell relative flex flex-col bg-white group pb-10 hover:bg-slate-100">
               {number}
             </div>
           );
