@@ -2,14 +2,14 @@ import React from 'react'
 
 // Creating references to the year and month
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const todaysDate = new Date();
-const thisYear = todaysDate.getFullYear();
-const thisMonthNumber = todaysDate.getMonth() + 1;
-const thisMonthName = months[todaysDate.getMonth()]
+let todaysDate = new Date();
+let thisYear = todaysDate.getFullYear();
+let thisMonthNumber = todaysDate.getMonth() + 1;
+let thisMonthName = months[todaysDate.getMonth()]
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
-const selectFirstDay = todaysDate.setDate(1);
-const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
+let selectFirstDay = todaysDate.setDate(1);
+let firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
 
 // Function to automatically determine number of days in current month
 function daysInMonth(year, month) {
@@ -17,7 +17,7 @@ function daysInMonth(year, month) {
 }
 
 // Creating array of days in the month
-const day = [];
+let day = [];
 for (let x = 1; x < daysInMonth(thisYear, thisMonthNumber) + 1; x++) {
   day.push(x);
 }
