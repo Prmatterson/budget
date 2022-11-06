@@ -18,7 +18,7 @@ function daysInMonth(year, month) {
 
 // Creating array of days in the month
 const day = [];
-for (let x = 1; x < daysInMonth(thisYear, thisMonthNumber) + 1; x++) {
+for (let x = 1; x <= daysInMonth(thisYear, thisMonthNumber); x++) {
   day.push(x);
 }
 
