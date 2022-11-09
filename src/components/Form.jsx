@@ -1,6 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
+setCalendarData((prev) => [...prev, { amount, plusMinus, account, biller, frequency, startDate, endDate }]);
+
 export default function Form() {
   const { register, handleSubmit} = useForm();
   const onSubmit = data => console.log(data);
