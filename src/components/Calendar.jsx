@@ -10,7 +10,6 @@ const thisMonthName = months[todaysDate.getMonth()]
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
 const selectFirstDay = todaysDate.setDate(1);
 const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)\
-console.log(firstDay)
 
 // Function to automatically determine number of days in current month
 function daysInMonth(year, month) {
