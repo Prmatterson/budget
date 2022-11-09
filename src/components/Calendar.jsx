@@ -9,7 +9,7 @@ const thisMonthName = months[todaysDate.getMonth()]
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
 const selectFirstDay = todaysDate.setDate(1);
-const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)
+const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)\
 
 // Function to automatically determine number of days in current month
 function daysInMonth(year, month) {
@@ -18,13 +18,23 @@ function daysInMonth(year, month) {
 
 // Creating array of days in the month
 const day = [];
-for (let x = 1; x < daysInMonth(thisYear, thisMonthNumber) + 1; x++) {
+for (let x = 1; x <= daysInMonth(thisYear, thisMonthNumber); x++) {
   day.push(x);
 }
 
+const daysOfWeek = [
+  "col-start-1",
+  "col-start-2",
+  "col-start-3",
+  "col-start-4",
+  "col-start-5",
+  "col-start-6",
+  "col-start-7",
+]
+
 // Main calendar component
 export default function Calendar() {
-
+console.log(firstDay + 1)
   return (
     <div>
       <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
@@ -40,13 +50,13 @@ export default function Calendar() {
         {day.map((number) => {
           if (number === 1) {
             return (
-              <div className={`cell col-start-${firstDay + 1} relative flex flex-col bg-white group`}>
+              <div className={`cell ${daysOfWeek[firstDay]} relative flex flex-col bg-white group hover:bg-slate-100`}>
                 {number}
-              </div>
+              </div>  
             );
           }
           return (
-            <div className="cell relative flex flex-col bg-white group mb-10">
+            <div className="cell relative flex flex-col bg-white group pb-10 hover:bg-slate-100">
               {number}
             </div>
           );
