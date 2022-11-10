@@ -33,8 +33,8 @@ const daysOfWeek = [
 ]
 
 // Main calendar component
-export default function Calendar() {
-console.log(firstDay + 1)
+export default function Calendar({ calendarData }) {
+
   return (
     <div>
       <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
