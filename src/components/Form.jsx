@@ -2,10 +2,12 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 
-export default function Form({ setCalendarData} ) {
+export default function Form({ setCalendarData } ) {
   const { register, handleSubmit} = useForm();
   const onSubmit = data => console.log(data);
-  setCalendarData((prev) => [...prev, { amount, plusMinus, account, biller, frequency, startDate, endDate }]);
+  useForm(() => {
+  setCalendarData((prev) => [...prev, {amount, plusMinus, account, biller, frequency, startDate, endDate}]);
+}, []);
 
   // Arrays of objects containing data for form fields
   let accounts = [
