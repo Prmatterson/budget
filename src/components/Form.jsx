@@ -28,6 +28,7 @@ export default function Form({ setCalendarData } ) {
     { label: "Once", value: "Once" },
     { label: "Weekly", value: "Weekly" },
     { label: "Biweekly", value: "Biweekly" },
+    { label: "Bimonthly", value: "Bimonthly" },
     { label: "Monthly", value: "Monthly" },
     { label: "Quarterly", value: "Quarterly" },
     { label: "Biannually", value: "Biannually" },
