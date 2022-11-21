@@ -1,4 +1,5 @@
 import React from 'react'
+import CalendarDay from './CalendarDay'
 
 // Creating references to the year and month
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -34,7 +35,7 @@ const daysOfWeek = [
 
 // Main calendar component
 export default function Calendar({ calendarData }) {
-
+console.log({calendarData})
   return (
     <div>
       <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
@@ -50,14 +51,18 @@ export default function Calendar({ calendarData }) {
         {day.map((number) => {
           if (number === 1) {
             return (
-              <div className={`cell ${daysOfWeek[firstDay]} relative flex flex-col bg-white group hover:bg-slate-100`}>
+              <div key={number} className={`cell ${daysOfWeek[firstDay]} relative flex flex-col bg-white group hover:bg-slate-100`}>
                 {number}
+                <br/>
+                <CalendarDay day={new Date(thisYear, thisMonthNumber - 1, number)} calendarData={ calendarData }/>
               </div>  
             );
           }
           return (
-            <div className="cell relative flex flex-col bg-white group pb-10 hover:bg-slate-100">
+            <div key={number} className="cell relative flex flex-col bg-white group pb-10 hover:bg-slate-100">
               {number}
+              <br/>
+              <CalendarDay day={new Date(thisYear, thisMonthNumber - 1, number)} calendarData={ calendarData } />
             </div>
           );
         })}
