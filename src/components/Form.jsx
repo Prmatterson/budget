@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
+export default function Form({ setCalendarData }) {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => {
+    console.log(data);
+    setCalendarData((prev) => [...prev, data]);
+  };
 
-export default function Form({ setCalendarData } ) {
-  const { register, handleSubmit} = useForm();
-  const onSubmit = data => console.log(data);
-  useForm(() => {
-  setCalendarData((prev) => [...prev, {amount, plusMinus, account, biller, frequency, startDate, endDate}]);
-}, []);
 
   // Arrays of objects containing data for form fields
   let accounts = [
@@ -40,21 +40,21 @@ export default function Form({ setCalendarData } ) {
     <div id="form" className="mx-10">
       <form className="col-span-2" onSubmit={handleSubmit(onSubmit)}>
         <label className="block text-sm font-medium text-slate-700">Amount Being Debited/Credited</label>
-        <input type="text" {...register("amount")} className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl"/>
+        <input type="text" {...register("amount")} className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" />
         <br />
         <br />
 
-        <input type="radio" {...register("plusMinus")} value="plus" id="plus"/>
-        <label for="plus" className="text-sm font-medium text-slate-700 mr-10 ml-1">Income (Credit)</label>
-        <input type="radio" {...register("plusMinus")}  value="minus" id="minus"/>
-        <label for="minus" className="text-sm font-medium text-slate-700 mr-4 ml-1">Expense (Debit)</label>
+        <input type="radio" {...register("plusMinus")} value="plus" id="plus" />
+        <label htmlFor="plus" className="text-sm font-medium text-slate-700 mr-10 ml-1">Income (Credit)</label>
+        <input type="radio" {...register("plusMinus")} value="minus" id="minus" />
+        <label htmlFor="minus" className="text-sm font-medium text-slate-700 mr-4 ml-1">Expense (Debit)</label>
         <br />
         <br />
 
         <label className="block text-sm font-medium text-slate-700">Bank Account Being Credited/Debited</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("account")}>
           <option value="Select Account"></option>
-          {accounts.map((account) => <option value={account.value}>{account.label}</option>)}
+          {accounts.map((account) => <option key={account.label} value={account.value}>{account.label}</option>)}
         </select>
         <br />
         <br />
@@ -62,7 +62,7 @@ export default function Form({ setCalendarData } ) {
         <label className="block text-sm font-medium text-slate-700">Payee or Payer</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("biller")}>
           <option value="Select Biller"></option>
-          {billers.map((biller) => <option value={biller.value}>{biller.label}</option>)}
+          {billers.map((biller) => <option key={biller.label} value={biller.value}>{biller.label}</option>)}
         </select>
         <br />
         <br />
@@ -70,18 +70,18 @@ export default function Form({ setCalendarData } ) {
         <label className="w-1/2 text-sm font-medium text-slate-700">Frequency of Transaction</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("frequency")}>
           <option value="Select Account"></option>
-          {frequencies.map((frequency) => <option value={frequency.value}>{frequency.label}</option>)}
+          {frequencies.map((frequency) => <option key={frequency.label} value={frequency.value}>{frequency.label}</option>)}
         </select>
         <br />
         <br />
 
         <label className="text-sm font-medium text-slate-700">Start Date</label>
-        <input type="date" className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl text-center" {...register("startDate")}/>
+        <input type="date" className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl text-center" {...register("startDate")} />
         <br />
         <br />
 
         <label className="text-sm font-medium text-slate-700">End Date</label>
-        <input type="date" className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl text-center" {...register("endDate")}/>
+        <input type="date" className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl text-center" {...register("endDate")} />
         <br />
         <br />
 
