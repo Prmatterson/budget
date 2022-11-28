@@ -1,11 +1,46 @@
-import React from 'react'
+import React from "react";
 
-export default function CalendarData({ day, calendarData }) {
-    const events = [];
-    // Use switch statement to go between frequencies and do the math
-    // calendarData is an array, so need to use for loop to get at data within it
-    if (day.getDay() === 1) {
-        events.push(<div key={day.getDay()}>Test</div>)
+function datediff(first, second) {
+  return Math.round((second - first) / (1000 * 60 * 60 * 24));
+}
+
+export default function CalendarDay({ day, calendarData }) {
+  const events = [];
+
+  for (const event of calendarData) {
+    const startDate = new Date(`${event.startDate} 00:00:00`);
+    const endDate = new Date(`${event.endDate} 00:00:00`);
+
+    if (day < startDate && day > endDate) continue;
+    switch (event.frequency) {
+      case "Once":
+        console.log(day.getDate());
+        console.log(event.startDate);
+        if (day.getDate() === startDate.getDate()) {
+          events.push(event);
+        }
+        break;
+      case "Weekly":
+        if (
+          day.getDate() === startDate.getDate() ||
+          datediff(startDate, day) % 7 === 0
+        ) {
+          events.push(event);
+        }
+        break;
+      case "Biweekly":
+        if (
+          day.getDate() === startDate.getDate() ||
+          datediff(startDate, day) % 14 === 0
+        ) {
+          events.push(event);
+        }
+        break;
     }
-    return events
+  }
+  return events.map(({ amount, biller }) => (
+    <div>
+      {amount} {biller}
+    </div>
+  ));
 }
