@@ -53,7 +53,7 @@ export default function Form({ setCalendarData }) {
 
         <label className="block text-sm font-medium text-slate-700">Bank Account Being Credited/Debited</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("account")}>
-          <option value="Select Account"></option>
+          <option value=""></option>
           {accounts.map((account) => <option key={account.label} value={account.value}>{account.label}</option>)}
         </select>
         <br />
@@ -61,7 +61,7 @@ export default function Form({ setCalendarData }) {
 
         <label className="block text-sm font-medium text-slate-700">Payee or Payer</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("biller")}>
-          <option value="Select Biller"></option>
+          <option value=""></option>
           {billers.map((biller) => <option key={biller.label} value={biller.value}>{biller.label}</option>)}
         </select>
         <br />
@@ -69,7 +69,7 @@ export default function Form({ setCalendarData }) {
 
         <label className="w-1/2 text-sm font-medium text-slate-700">Frequency of Transaction</label>
         <select className="mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl" {...register("frequency")}>
-          <option value="Select Account"></option>
+          <option value=""></option>
           {frequencies.map((frequency) => <option key={frequency.label} value={frequency.value}>{frequency.label}</option>)}
         </select>
         <br />
