@@ -14,8 +14,6 @@ export default function CalendarDay({ day, calendarData }) {
     if (day < startDate && day > endDate) continue;
     switch (event.frequency) {
       case "Once":
-        console.log(day.getDate());
-        console.log(event.startDate);
         if (day.getDate() === startDate.getDate()) {
           events.push(event);
         }

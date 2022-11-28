@@ -39,15 +39,19 @@ console.log({calendarData})
   return (
     <div>
       <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
-        <div className='cell col-span-7 bg-slate-300 rounded-t-xl' id='year'> {thisYear} </div>
-        <div className="cell col-span-7 bg-slate-200" id='month'> {thisMonthName} </div>
-        <div id="date-header-sunday" className="bg-slate-100">Sun</div>
-        <div id='date-header-monday' className="bg-slate-100">Mon</div>
-        <div id='date-header-tuesday' className="bg-slate-100">Tue</div>
-        <div id='date-header-wednesday' className="bg-slate-100">Wed</div>
-        <div id='date-header-thursday' className="bg-slate-100">Thu</div>
-        <div id='date-header-friday' className="bg-slate-100">Fri</div>
-        <div id='date-header-saturday' className="bg-slate-100">Sat</div>
+        <button className="col-span-2 bg-slate-300 rounded-tl-xl">Previous</button>
+        <button className='cell col-span-3 bg-slate-300 text-xl' id='year'> {thisYear} </button>
+        <button className="col-span-2 bg-slate-300 rounded-tr-xl">Next</button>
+        <button className="col-span-2 bg-slate-200">Previous</button>
+        <button className="cell col-span-3 bg-slate-200 text-lg" id='month'> {thisMonthName} </button>
+        <button className="col-span-2 bg-slate-200">Next</button>
+        <div id="date-header-sunday" className="bg-slate-100 pt-5">Sun</div>
+        <div id='date-header-monday' className="bg-slate-100 pt-5">Mon</div>
+        <div id='date-header-tuesday' className="bg-slate-100 pt-5">Tue</div>
+        <div id='date-header-wednesday' className="bg-slate-100 pt-5">Wed</div>
+        <div id='date-header-thursday' className="bg-slate-100 pt-5" pt-5>Thu</div>
+        <div id='date-header-friday' className="bg-slate-100 pt-5">Fri</div>
+        <div id='date-header-saturday' className="bg-slate-100 pt-5">Sat</div>
         {day.map((number) => {
           if (number === 1) {
             return (
