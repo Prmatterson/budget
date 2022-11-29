@@ -1,5 +1,6 @@
 import React from 'react'
 import CalendarDay from './CalendarDay'
+import PrevMonth from './PrevMonth'
 
 // Creating references to the year and month
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -7,6 +8,7 @@ const todaysDate = new Date();
 const thisYear = todaysDate.getFullYear();
 const thisMonthNumber = todaysDate.getMonth() + 1;
 const thisMonthName = months[todaysDate.getMonth()]
+
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
 const selectFirstDay = todaysDate.setDate(1);
@@ -39,12 +41,12 @@ console.log({calendarData})
   return (
     <div>
       <div className='grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl'>
-        <button className="col-span-2 bg-slate-300 rounded-tl-xl">Previous</button>
-        <button className='cell col-span-3 bg-slate-300 text-xl' id='year'> {thisYear} </button>
-        <button className="col-span-2 bg-slate-300 rounded-tr-xl">Next</button>
-        <button className="col-span-2 bg-slate-200">Previous</button>
-        <button className="cell col-span-3 bg-slate-200 text-lg" id='month'> {thisMonthName} </button>
-        <button className="col-span-2 bg-slate-200">Next</button>
+        <div className="col-span-2 bg-slate-300 rounded-tl-xl text-sm pt-5"></div>
+        <div className='cell col-span-3 bg-slate-300 text-xl pt-4' id='year'> {thisYear} </div>
+        <button className="col-span-2 bg-slate-300 rounded-tr-xl text-sm"></button>
+        <button className="col-span-2 bg-slate-200 text-sm"><PrevMonth /></button>
+        <div className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'> {thisMonthName} </div>
+        <button className="col-span-2 bg-slate-200 text-sm"></button>
         <div id="date-header-sunday" className="bg-slate-100 pt-5">Sun</div>
         <div id='date-header-monday' className="bg-slate-100 pt-5">Mon</div>
         <div id='date-header-tuesday' className="bg-slate-100 pt-5">Tue</div>
@@ -74,4 +76,3 @@ console.log({calendarData})
     </div>
   )
 }
-
