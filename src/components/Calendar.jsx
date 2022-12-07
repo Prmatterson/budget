@@ -3,6 +3,7 @@ import CalendarDay from './CalendarDay'
 import PrevMonth from './PrevMonth'
 
 // Creating references to the year and month
+const test = "test"
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const todaysDate = new Date();
 const thisYear = todaysDate.getFullYear();
@@ -43,7 +44,7 @@ console.log({calendarData})
         <div className="col-span-2 bg-slate-300 rounded-tl-xl text-sm pt-5"></div>
         <div className='cell col-span-3 bg-slate-300 text-xl pt-4' id='year'> {thisYear} </div>
         <button className="col-span-2 bg-slate-300 rounded-tr-xl text-sm"></button>
-        <button className="col-span-2 bg-slate-200 text-sm"><PrevMonth /></button>
+        <button className="col-span-2 bg-slate-200 text-sm"><PrevMonth test /></button>
         <div className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'> {thisMonthName} </div>
         <button className="col-span-2 bg-slate-200 text-sm"></button>
         <div id="date-header-sunday" className="bg-slate-100 pt-5">Sun</div>
