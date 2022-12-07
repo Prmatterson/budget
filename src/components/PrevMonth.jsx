@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PrevMonth(test, months, todaysDate, thisYear, thisMonthNumber, thisMonthName, selectFirstDay, firstDay) {
+export default function PrevMonth({test, months, todaysDate, thisYear, thisMonthNumber, thisMonthName, selectFirstDay, firstDay}) {
 
   return (
     <button
@@ -12,9 +12,11 @@ export default function PrevMonth(test, months, todaysDate, thisYear, thisMonthN
           currentDate.getMonth(),
           1
         );
-        const thisMonthNumber = previousMonth;
+        const prevMonthNumber = previousMonth;
         console.log(previousMonth.getMonth());
-        console.log(test)
+        console.log(thisYear)
+        console.log(todaysDate)
+        console.log(thisMonthNumber)
         // Alternative, find function to change thisMonthNumber to "thisMonthNumber - 1"
       }}
     >
