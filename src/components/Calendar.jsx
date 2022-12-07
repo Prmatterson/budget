@@ -1,6 +1,5 @@
 import React from 'react'
 import CalendarDay from './CalendarDay'
-import PrevMonth from './PrevMonth'
 
 // Creating references to the year and month
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -8,7 +7,6 @@ const todaysDate = new Date();
 const thisYear = todaysDate.getFullYear();
 const thisMonthNumber = todaysDate.getMonth() + 1;
 const thisMonthName = months[todaysDate.getMonth()]
-
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
 const selectFirstDay = todaysDate.setDate(1);
