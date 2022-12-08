@@ -47,7 +47,7 @@ console.log({calendarData})
         <div className='cell col-span-3 bg-slate-300 text-xl pt-4' id='year'> {thisYear} </div>
         <button className="col-span-2 bg-slate-300 rounded-tr-xl text-sm"></button>
         <div className="col-span-2 bg-slate-200 text-sm"></div>
-        <button className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'><SetCalendarMonth months={months} thisMonthNumber={thisMonthNumber} thisMonthName={thisMonthName}/>{thisMonthName} </button>
+        <button className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'><SetCalendarMonth date={date} months={months} thisMonthNumber={thisMonthNumber} thisMonthName={thisMonthName}/>{thisMonthName} </button>
         <button className="col-span-2 bg-slate-200 text-sm"></button>
         <div id="date-header-sunday" className="bg-slate-100 pt-5">Sun</div>
         <div id='date-header-monday' className="bg-slate-100 pt-5">Mon</div>
