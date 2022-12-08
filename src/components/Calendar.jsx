@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CalendarDay from './CalendarDay'
+import SetCalendarMonth from './SetCalendarMonth'
+
+// const {date, setDate} = useState()
 
 // Creating references to the year and month
 const test = "test"
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const todaysDate = new Date();
-const thisYear = todaysDate.getFullYear();
-const thisMonthNumber = todaysDate.getMonth() + 1;
-const thisMonthName = months[todaysDate.getMonth()]
+let date = new Date();
+const thisYear = date.getFullYear();
+const thisMonthNumber = date.getMonth() + 1;
+const thisMonthName = months[date.getMonth()]
 
 // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))
-const selectFirstDay = todaysDate.setDate(1);
-const firstDay = todaysDate.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)\
+const selectFirstDay = date.setDate(1);
+const firstDay = date.getDay(); // the first column will be this index number (e.g. Saturday (or "6") will be mapped to the 7th column)\
 
 // Function to automatically determine number of days in current month
 function daysInMonth(year, month) {
@@ -44,7 +47,7 @@ console.log({calendarData})
         <div className='cell col-span-3 bg-slate-300 text-xl pt-4' id='year'> {thisYear} </div>
         <button className="col-span-2 bg-slate-300 rounded-tr-xl text-sm"></button>
         <div className="col-span-2 bg-slate-200 text-sm"></div>
-        <div className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'> {thisMonthName} </div>
+        <button className="cell col-span-3 bg-slate-200 text-lg pt-4" id='month'><SetCalendarMonth months={months} thisMonthNumber={thisMonthNumber} thisMonthName={thisMonthName}/>{thisMonthName} </button>
         <button className="col-span-2 bg-slate-200 text-sm"></button>
         <div id="date-header-sunday" className="bg-slate-100 pt-5">Sun</div>
         <div id='date-header-monday' className="bg-slate-100 pt-5">Mon</div>
