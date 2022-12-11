@@ -26,6 +26,7 @@ const daysOfWeek = [
   "col-start-7",
 ];
 
+
 // Main calendar component
 export default function Calendar({ calendarData }) {
   // Creating references to the year and month

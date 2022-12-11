@@ -1,5 +1,10 @@
 import React from "react";
 
+const accountColourCodes = {
+  "Bank of Montreal Chequing": "bg-blue-500 text-sky-400",
+  "Scotiabank Savings": "bg-red-500 text-sky-400"
+}
+
 function datediff(first, second) {
   return Math.round((second - first) / (1000 * 60 * 60 * 24));
 }
@@ -36,8 +41,8 @@ export default function CalendarDay({ day, calendarData }) {
         break;
     }
   }
-  return events.map(({ amount, biller }) => (
-    <div>
+  return events.map(({ amount, biller, account }) => (
+    <div className={`ml-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 ${accountColourCodes[account]} rounded-full`}>
       {amount} {biller}
     </div>
   ));
