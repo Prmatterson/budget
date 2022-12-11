@@ -11,16 +11,16 @@ export default function CalendarDay({ day, calendarData }) {
     const startDate = new Date(`${event.startDate} 00:00:00`);
     const endDate = new Date(`${event.endDate} 00:00:00`);
 
-    if (day < startDate && day > endDate) continue;
+    if (day < startDate || day > endDate) continue;
     switch (event.frequency) {
       case "Once":
-        if (day.getDate() === startDate.getDate()) {
+        if (day === startDate) {
           events.push(event);
         }
         break;
       case "Weekly":
         if (
-          day.getDate() === startDate.getDate() ||
+          day === startDate ||
           datediff(startDate, day) % 7 === 0
         ) {
           events.push(event);
@@ -28,7 +28,7 @@ export default function CalendarDay({ day, calendarData }) {
         break;
       case "Biweekly":
         if (
-          day.getDate() === startDate.getDate() ||
+          day === startDate ||
           datediff(startDate, day) % 14 === 0
         ) {
           events.push(event);
