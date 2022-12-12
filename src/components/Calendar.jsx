@@ -63,11 +63,11 @@ export default function Calendar({ calendarData }) {
   return (
     <div>
       <div className="grid grid-cols-7 grid-rows-5 flex-grow w-full h-auto pt-px mt-1 shadow-xl text-middle rounded-b-xl">
-        <div className="col-span-2 bg-slate-300 rounded-tl-xl text-sm pt-5"></div>
-        <div className="cell col-span-3 bg-slate-300 text-xl pt-4" id="year">
+        <button className="col-span-2 bg-slate-300 rounded-tl-xl text-sm pt-5"></button>
+        <button className="cell col-span-3 bg-slate-300 text-xl pt-4" id="year">
           {" "}
           {thisYear}{" "}
-        </div>
+        </button>
         <button className="col-span-2 bg-slate-300 rounded-tr-xl text-sm"></button>
         <button
           className="col-span-2 bg-slate-200 text-sm"
