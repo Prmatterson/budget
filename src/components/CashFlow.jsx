@@ -16,7 +16,7 @@ export default function CashFlow() {
     const { cashFlowData, setCashFlowData} = useState()
 
 return (
-    <div className="grid grid-cols-3 grid-rows-10" id='container'>
+    <div className="grid grid-cols-3 " id='container'>
         <div className="col-span-4 align-center" id="cashflow-title">Cash Flow</div>
         <form className="col-span-4" id='from-to' onSubmit={handleSubmit(onSubmit)}>
             <label className="col-span- text-sm font-medium text-slate-700">Start Date</label>
@@ -29,26 +29,7 @@ return (
         <div className="col-span-1" id="cashflow-heading">BMO</div>
         <div className="col-span-1" id="cashflow-heading">Scotia</div>
         <div className="col-span-1" id="cashflow-heading">Total</div>
-        <div className="col-span-1" id="cashflow-date">Start Date</div>
-        <div className="col-span-1" id="account-amount">100</div>
-        <div className="col-span-1" id="account-amount">20</div>
-        <div className="col-span-1" id="account-amount">120</div>
-        <div className="col-span-1" id="account-amount">Dec 5</div>
-        <div className="col-span-1" id="account-amount">10</div>
-        <div className="col-span-1" id="account-amount">30</div>
-        <div className="col-span-1" id="account-amount">40</div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="account-amount"></div>
-        <div className="col-span-1" id="cashflow-enddate">End Date</div>
-        <div className="col-span-1" id="subtotal">Test</div>
-        <div className="col-span-1" id="subtotal">Test</div>
-        <div className="col-span-1" id="subtotal">Test</div>
+        {/* Here will be an if statement like examples after line 19 in CalendarDay */}
     </div>
 )
 
