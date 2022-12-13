@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-const fakeData = [
-    { accountName: "BMO", costs: [50, 100, 200] },
-    { accountName: "Scotia", costs: [50, 100, 200] },
-  ];
 
+const fakeDataArray = [
+    { accountName: "BMO", costs: [50, 100, 200] },
+    { accountName: "Scotia", costs: [50, 100, 200] }
+]
+    
 export default function CashFlow() {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
       console.log(data);
-      setCashFlowData((prev) => [...prev, data]);
+      setFakeData((prev) => [...prev, data]);
     };
-    
-    const { cashFlowData, setCashFlowData} = useState()
 
 return (
     <div className="grid grid-cols-3 " id='container'>
