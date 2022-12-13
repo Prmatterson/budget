@@ -18,7 +18,7 @@ export default function CashFlow({ calendarData, cashFlowData, setCashFlowData }
     };
 
 // create formula to populate receipt statement using data taken from calendarData
-    const events = [];
+    // const events = [];
 
 // for (const event of cashFlowData) {
 //     const startDate = new Date(`${event.startDate} 00:00:00`);
@@ -38,9 +38,10 @@ return (
             <input type="date" className="col-span-1 mt-1 w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-sm shadow-xl text-center" {...register("endDateCF")} />
             <button type="submit" className="col-span 1mt-1 w-1/4 px-3 py-2 bg-white border border-4 border-slate-300 rounded-xl text-sm font-bold shadow-xl text-center hover:bg-slate-300">Submit</button>
         </form>
+        {/* Have the account names populate from data automatically */}
         <div className="col-span-1" id="cashflow-heading">Date</div>
-        <div className="col-span-1" id="cashflow-heading">BMO</div>
-        <div className="col-span-1" id="cashflow-heading">Scotia</div>
+        <div className="col-span-1" id="cashflow-heading">Account 1</div>
+        <div className="col-span-1" id="cashflow-heading">Account 2</div>
         <div className="col-span-1" id="cashflow-heading">Total</div>
         {/* Here will be an if statement like examples after line 19 in CalendarDay */}
     </div>
