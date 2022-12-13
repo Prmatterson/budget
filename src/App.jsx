@@ -7,12 +7,13 @@ import "tailwindcss/tailwind.css"
 export default function App() {
 
 const [calendarData, setCalendarData] = useState([]);
+const [cashFlowData, setCashFlowData] = useState([]);
 
   return (
     <div className="grid grid-cols-3">
-      <Form setCalendarData={setCalendarData} />
+      <Form setCalendarData={setCalendarData}/>
       <Calendar calendarData={calendarData} />
-      <CashFlow />
+      <CashFlow calendarData={calendarData} cashFlowData={cashFlowData} setCashFlowData={setCashFlowData} />
     </div>
   );
 };

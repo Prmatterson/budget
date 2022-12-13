@@ -1,18 +1,32 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+// Collect data from calendarData and sort by account as per below example
+// const fakeDataArray = [
+//     { accountName: "BMO", costs: [50, 100, 200] },
+//     { accountName: "Scotia", costs: [50, 100, 200] }
+// ]
 
-const fakeDataArray = [
-    { accountName: "BMO", costs: [50, 100, 200] },
-    { accountName: "Scotia", costs: [50, 100, 200] }
-]
     
-export default function CashFlow() {
+export default function CashFlow({ calendarData, cashFlowData, setCashFlowData }) {
+    // Need to click submit twice to have data show up in console log for cashFlowData (line 16)
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-      console.log(data);
-      setFakeData((prev) => [...prev, data]);
+      console.log(data); 
+      setCashFlowData((prev) => [...prev, data]);
+      console.log(cashFlowData)
     };
+
+// create formula to populate receipt statement using data taken from calendarData
+    const events = [];
+
+for (const event of cashFlowData) {
+    const startDate = new Date(`${event.startDate} 00:00:00`);
+    const endDate = new Date(`${event.endDate} 00:00:00`);
+
+    if (day < startDate || day > endDate) continue;
+// insert formula here
+}
 
 return (
     <div className="grid grid-cols-3 " id='container'>
