@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form'
 
     
 export default function CashFlow({ calendarData, cashFlowData, setCashFlowData }) {
-    // Need to click submit twice to have data show up in console log for cashFlowData (line 16)
+    // Why do you need to click submit twice to have data show up in console log for cashFlowData (line 16)
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
       console.log(data); 
@@ -20,13 +20,13 @@ export default function CashFlow({ calendarData, cashFlowData, setCashFlowData }
 // create formula to populate receipt statement using data taken from calendarData
     const events = [];
 
-for (const event of cashFlowData) {
-    const startDate = new Date(`${event.startDate} 00:00:00`);
-    const endDate = new Date(`${event.endDate} 00:00:00`);
+// for (const event of cashFlowData) {
+//     const startDate = new Date(`${event.startDate} 00:00:00`);
+//     const endDate = new Date(`${event.endDate} 00:00:00`);
 
-    if (day < startDate || day > endDate) continue;
-// insert formula here
-}
+//     if (day < startDate || day > endDate) continue;
+// // insert formula here
+// }
 
 return (
     <div className="grid grid-cols-3 " id='container'>
