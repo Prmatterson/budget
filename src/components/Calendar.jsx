@@ -28,8 +28,15 @@ const daysOfWeek = [
 
 
 // Main calendar component
-export default function Calendar({ calendarData }) {
+export default function Calendar({ calendarData, watch }) {
   // Creating references to the year and month
+
+  const watchStartDate = watch("startDateCF")
+  const watchEndDate = watch("endDateCF")
+  useEffect(() => {
+    console.log(watchStartDate, watchEndDate)
+  }
+  )
 
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const nextMonth = () => {

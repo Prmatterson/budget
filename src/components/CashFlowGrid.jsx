@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {months} from './CalendarSchema.json'
 
-export default function CashFlowGrid({ cashFlowData }) {
+const calendarDataToTimeline = (calendarData, startDateCF, endDateCF) => {
+  
+  const startDate = new Date(`${startDateCF} 00:00:00`)
+  const endDate = new Date(`${endDateCF} 00:00:00`)
+  const timelineEntries = []
+
+  // Need a starting amount generated for each account
+  for (let d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
+    // Subtract/add from starting amount for each account
+    timelineEntries.push({
+      date: new Date(d.getTime()),
+      // Need to push with running totals of accounts
+    })
+  }
+  return timelineEntries;
+}
+
+export default function CashFlowGrid({ calendarData, cashFlowData, watch }) {
+
+  const startDate = watch("startDateCF")
+  const endDate = watch("endDateCF")
+  useEffect(() => {
+    console.log(startDate, endDate)
+  }
+  )
 
   // Boundaries of Date Range of Grid (eventually have follow the month view changes made in Calendar)
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
 
   const columnChooser = [
     "col-start-1",
@@ -48,7 +58,7 @@ export default function CashFlowGrid({ cashFlowData }) {
   for (let x = 1; x <= daysInMonth(thisYear, currentMonth + 1); x++) {
     dateSpan.push(x);
   }
-  
+
   
 // Content of Grid
 
@@ -57,8 +67,9 @@ export default function CashFlowGrid({ cashFlowData }) {
     { accountName2: "acc 2", cost2: "50"},
     { accountName3: "acc 3", cost3: "10"},
   ]
-
-  console.log(grid)
+  
+  const timelineEntries = calendarDataToTimeline(calendarData, startDate, endDate)
+  console.log(timelineEntries)
   
   return (
     <div className="grid grid-cols-5">
@@ -79,9 +90,7 @@ export default function CashFlowGrid({ cashFlowData }) {
       </div>
       {dateSpan.map(() => {
         return (
-          <div>
-            <div>Test</div>
-          </div>
+            <div className={`${columnChooser[0]}`}></div>
         )})}
       {/* Enter cashFlowData here for start and end dates, calendar Data for content */}
     </div>
