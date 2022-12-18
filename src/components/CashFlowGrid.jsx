@@ -19,6 +19,16 @@ export default function CashFlowGrid({ cashFlowData }) {
     "December",
   ];
 
+  const columnChooser = [
+    "col-start-1",
+    "col-start-2",
+    "col-start-3",
+    "col-start-4",
+    "col-start-5",
+    "col-start-6",
+    "col-start-7",
+  ];
+
   const thisYear = 2022;
   const currentMonth = new Date().getMonth();
   const thisMonthName = months[currentMonth];
@@ -34,11 +44,11 @@ export default function CashFlowGrid({ cashFlowData }) {
 
   const dateSpan = []
 
+  // Replace below for loop with one that only pushes values onto dates that have data in the Calendar
   for (let x = 1; x <= daysInMonth(thisYear, currentMonth + 1); x++) {
     dateSpan.push(x);
   }
-
-  console.log(dateSpan)
+  
   
 // Content of Grid
 
@@ -48,32 +58,31 @@ export default function CashFlowGrid({ cashFlowData }) {
     { accountName3: "acc 3", cost3: "10"},
   ]
 
-  for (let x = 1; x <= (dateSpan.length); x++) {
-    grid.push();
-  }
   console.log(grid)
-
+  
   return (
-    <div className="grid grid-cols-4">
+    <div className="grid grid-cols-5">
       <div className="col-span-1" id="cashflow-heading">
         Date
       </div>
       <div className="col-span-1" id="cashflow-heading">
-        Account 1
+        Acct 1
       </div>
       <div className="col-span-1" id="cashflow-heading">
-        Account 2
+        Acct 2
+      </div>
+      <div className="col-span-1" id="cashflow-heading">
+        Acct 3
       </div>
       <div className="col-span-1" id="cashflow-heading">
         Total
       </div>
-      {grid.map(() => {
+      {dateSpan.map(() => {
         return (
           <div>
             <div>Test</div>
           </div>
-        );
-      })}
+        )})}
       {/* Enter cashFlowData here for start and end dates, calendar Data for content */}
     </div>
   );
