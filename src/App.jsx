@@ -8,9 +8,12 @@ import "tailwindcss/tailwind.css"
 
 export default function App() {
 
-const [calendarData, setCalendarData] = useState([]);
+const [calendarData, setCalendarData] = useState(JSON.parse(localStorage.getItem("calendarData") || null) || []);
 const [cashFlowData, setCashFlowData] = useState([]);
 const { register, watch } = useForm();
+useEffect(() => {
+  localStorage.setItem("calendarData", JSON.stringify(calendarData))
+}, [calendarData] )
 
 
   return (
