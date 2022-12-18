@@ -11,7 +11,7 @@ const [calendarData, setCalendarData] = useState([]);
 const [cashFlowData, setCashFlowData] = useState([]);
 
   return (
-    <div className="grid grid-cols-4 grid-rows-2">
+    <div className="grid grid-cols-2 grid-rows-2">
       <Form setCalendarData={setCalendarData}/>
       <Calendar calendarData={calendarData} />
       <CashFlowForm setCashFlowData={setCashFlowData} />
