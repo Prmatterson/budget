@@ -38,9 +38,9 @@ export default function Calendar({ calendarData }) {
   const previousMonth = () => {
     setCurrentMonth((((currentMonth - 1) % 12) + 12) % 12);
   };
-  useEffect(() => {
-    console.log(currentMonth);
-  }, [currentMonth]);
+  // useEffect(() => {
+  //   console.log(currentMonth);
+  // }, [currentMonth]);
 
   const thisYear = 2022;
   const thisMonthName = months[currentMonth];
