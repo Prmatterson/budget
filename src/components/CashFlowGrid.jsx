@@ -13,6 +13,7 @@ const calendarDataToTimeline = (calendarData, startDateCF, endDateCF) => {
     timelineEntries.push({
       date: new Date(d.getTime()),
       // Need to push with running totals of accounts
+      // forEach method may help, can iterate per day and record the amounts a function based on amount and date
     })
   }
   return timelineEntries;
