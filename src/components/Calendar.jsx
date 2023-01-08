@@ -49,7 +49,7 @@ export default function Calendar({ calendarData, watch }) {
   //   console.log(currentMonth);
   // }, [currentMonth]);
 
-  const thisYear = 2023;
+  const thisYear = new Date().getFullYear();
   const thisMonthName = months[currentMonth];
 
   // Preparation to assign which column the first day goes into (following two lines select the 1st day of the relevant month (e.g. "6" = Sat))

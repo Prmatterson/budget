@@ -42,7 +42,7 @@ export default function CashFlowGrid({ calendarData, cashFlowData, watch }) {
     "col-start-7",
   ];
 
-  const thisYear = 2022;
+  const thisYear = new Date().getFullYear();
   const currentMonth = new Date().getMonth();
   const thisMonthName = months[currentMonth];
 
@@ -66,9 +66,9 @@ export default function CashFlowGrid({ calendarData, cashFlowData, watch }) {
 // Content of Grid
 
   const grid = [
-    { accountName1: "acc 1", cost1: "100"},
-    { accountName2: "acc 2", cost2: "50"},
-    { accountName3: "acc 3", cost3: "10"},
+    { accountName1: "Acc 1", cost1: "100"},
+    { accountName2: "Acc 2", cost2: "50"},
+    { accountName3: "Acc 3", cost3: "10"},
   ]
   
   const timelineEntries = calendarDataToTimeline(calendarData, startDate, endDate)
